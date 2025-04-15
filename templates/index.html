@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chia sẻ những điều thú vị</title>
+</head>
+<body>
+    <h1>Đăng Tài Liệu</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Tải lên">
+    </form>
+
+    <h2>Danh sách tài liệu:</h2>
+    <ul>
+        {% for file in files %}
+            <li>
+                {{ file }} - 
+                <a href="{{ url_for('download', filename=file) }}">Tải xuống</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
